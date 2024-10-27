@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leave Application Form</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-image: url("leave.png");
+			background-size: cover;
+		}
+		form {
+			width: 500px;
+			
+			margin: 20px auto;
+			padding: 20px;
+			border: 1px solid #7f1919;
+			border-radius: 10px;
+            justify-content: center;
+		     background-color: antiquewhite;
+			
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"], select, textarea {
+			width: 100%;
+			height: 40px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		textarea {
+			height: 100px;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: #870d0d;
+			padding: 10px 20px;
+			border:2px solid #340606;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+        h1{
+            text-align:center;
+            color: #cf9a29;
+        }
+		div{
+			display: flex;
+			width: 100%;
+		
+		}
+		.b{
+			justify-content: center;
+		}
+    
+	</style>
+</head>
+<body>
+	<h1>Leave Application Form</h1>
+	<form id="leave-form">
+		<div><label for="name">FirstName:</label>
+		<input type="text" id="name" name="name" placeholder="enter your FirstName"required>
+        <label for="name">Lastname:</label>
+		<input type="text" id="name"name="name" placeholder="enter your lastName"required></div>
+		<label for="roll-no">Roll No.:</label>
+		<input type="text" id="roll-no" name="roll-no" placeholder="roll number"required>
+		
+		
+		</select>
+		<label for="department">Department:</label>
+		<select id="department" name="department" required>
+			<option value="">Select Department</option>
+			<option value="CSE">Computer Science and Engineering</option>
+			<option value="ECE">Electronics and Communication Engineering</option>
+			<option value="ME">Mechanical Engineering</option>
+			<option value="EE">Electrical Electronics Engineering</option>
+		</select>
+		<label for="specialization">specialization:</label>
+		<select id="specialization" name="specialization" required>
+			<option value="">Select specialization</option>
+			<option value="CSE_general">Computer Science and Engineering</option>
+			<option value="AI">Artificial Intelligence</option>
+			<option value="CS">Cyber Security</option>
+			
+		</select>
+		<label for="leave-type">Leave Type:</label>
+		<select id="leave-type" name="leave-type" required>
+			<option value="">Select Leave Type</option>
+			<option value="Medical">Medical Leave</option>
+			<option value="Personal">Personal Leave</option>
+			<option value="Other">Other</option>
+		</select>
+		
+		<label for="from-date">From Date:</label>
+		<input type="date" id="from-date" name="from-date" required>
+		
+		<label for="to-date">To Date:</label>
+		<input type="date" id="to-date" name="to-date" required>
+		
+		<label for="reason">Reason for Leave:</label>
+		<textarea id="reason" name="reason" required></textarea>
+		
+		<div class="b"><input type="submit" value="Submit" onclick="submitForm()"></div>
+	</form>
+	
+	<script>
+		function submitForm() {
+			var name = document.getElementById('name').value;
+			var rollNo = document.getElementById('roll-no').value;
+			var department = document.getElementById('department').value;
+			var leaveType = document.getElementById('leave-type').value;
+			var fromDate = document.getElementById('from-date').value;
+			var toDate = document.getElementById('to-date').value;
+			var reason = document.getElementById('reason').value;
+			
+			if (name && rollNo && department && leaveType && fromDate && toDate && reason) {
+				alert('Form submitted successfully!');
+			} else {
+				alert('Please fill all fields!');
+			}
+		}
+	</script>
+</body>
+</html>
